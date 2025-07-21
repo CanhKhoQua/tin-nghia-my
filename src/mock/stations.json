@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Tín Nghĩa Mỹ - Rạch Vách",
+    "image": "https://i.ibb.co/WWDp58cM/logo.png",
+    "address": "Z06, Số 13, Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, Việt Nam",
+    "location": {
+      "lat": 10.768746,
+      "lng": 106.728228
+    }
+  },
+  {
+    "id": 2,
+    "name": "Tín Nghĩa Mỹ",
+    "image": "https://i.ibb.co/WWDp58cM/logo.png",
+    "address": "Z06, Số 13, Tân Thuận Đông, Quận 7, Thành phố Hồ Chí Minh, Việt Nam",
+    "location": {
+      "lat": 10.768746,
+      "lng": 106.728228
+    }
+  }
+]
