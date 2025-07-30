@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import TransitionLink from "./transition-link";
 
 export default function CategorySlider() {
-  const { id } = useParams();
+  const { categoryId } = useParams();
   const categories = useAtomValue(categoriesState);
 
   return (
@@ -14,7 +14,7 @@ export default function CategorySlider() {
           to={`/category/${category.id}`}
           key={category.id}
           className={"h-8 flex-none rounded-full p-1 pr-2 flex items-center space-x-1 border border-black/15 ".concat(
-            String(category.id) === id
+            String(category.id) === categoryId
               ? "bg-primary text-primaryForeground"
               : "bg-section"
           )}

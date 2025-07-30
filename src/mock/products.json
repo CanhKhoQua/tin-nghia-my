@@ -2,16 +2,18 @@
   {
     "id": 1,
     "categoryId": 1,
-    "name": "Táo Fuji Hảo Hạng - 1kg",
+    "name": "Xi măng SCG Super Low Carbon PCB40",
+    "brandId": 1,
     "price": 67900,
     "originalPrice": 69900,
-    "image": "https://zalo-miniapp.github.io/zaui-market/dummy/product/apples.png",
-    "detail": "Táo Fuji tươi ngon, giòn và ngọt tự nhiên. Được tuyển chọn kỹ càng từ những vườn cây chất lượng cao."
+    "image": "https://bizweb.dktcdn.net/thumb/grande/100/476/804/products/xi-mang-scg-super-low-carbon-pcb40.png?v=1743153285157",
+    "detail": "Xi măng SCG Low Carbon là sản phẩm xanh của SCG, ứng dụng công nghệ tiên tiến nhằm giảm phát thải carbon, bảo vệ môi trường và hướng tới mục tiêu Net Zero vào năm 2050. Sản phẩm thuộc dòng PCB40 đa dụng, phù hợp cho các hạng mục xây dựng chính và thể hiện cam kết phát triển bền vững của SCG."
   },
   {
     "id": 2,
     "categoryId": 1,
     "name": "Bắp cải xanh tươi - 300g",
+    "brandId": 2,
     "price": 27900,
     "originalPrice": 30000,
     "image": "https://zalo-miniapp.github.io/zaui-market/dummy/product/cabbage.png",
@@ -19,8 +21,9 @@
   },
   {
     "id": 3,
-    "categoryId": 8,
+    "categoryId": 1,
     "name": "Kem sô cô la mát lạnh - 500ml",
+    "brandId": 3,
     "price": 313000,
     "originalPrice": 500000,
     "image": "https://zalo-miniapp.github.io/zaui-market/dummy/product/creamy.png",
@@ -28,8 +31,9 @@
   },
   {
     "id": 4,
-    "categoryId": 6,
+    "categoryId": 1,
     "name": "Bánh quy bơ Danisa - 200g",
+    "brandId": 4,
     "price": 150000,
     "originalPrice": 300000,
     "image": "https://zalo-miniapp.github.io/zaui-market/dummy/product/danisa.png",
@@ -37,7 +41,7 @@
   },
   {
     "id": 5,
-    "categoryId": 7,
+    "categoryId": 1,
     "name": "Chảo chống dính chuyên nghiệp",
     "price": 150000,
     "originalPrice": 300000,

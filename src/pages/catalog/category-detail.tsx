@@ -7,10 +7,11 @@ import { Suspense } from "react";
 import { ProductGridSkeleton } from "../search";
 import { EmptyCategory } from "@/components/empty";
 import { useParams } from "react-router-dom";
+import BrandSlider from "@/components/brand-slider";
 
 function ProductList() {
-  const { id } = useParams();
-  const products = useAtomValue(productsByCategoryState(id));
+  const { categoryId } = useParams();
+  const products = useAtomValue(productsByCategoryState(categoryId));
 
   if (!products.length) {
     return <EmptyCategory />;
@@ -23,6 +24,7 @@ export default function CategoryDetailPage() {
   return (
     <div className="h-full flex flex-col bg-section">
       <CategorySlider />
+      <BrandSlider/>
       <HorizontalDivider />
       <div className="flex-1 overflow-y-auto">
         <Suspense fallback={<ProductGridSkeleton className="pt-4" />}>

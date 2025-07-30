@@ -93,20 +93,29 @@ const router = createBrowserRouter(
           },
         },
         {
-          path: "/category/:id",
+          path: "/category/:categoryId",
           element: <CategoryDetailPage />,
           handle: {
             search: true,
             title: ({ categories, params }) =>
-              categories.find((c) => String(c.id) === params.id)?.name,
+              categories.find((c) => String(c.id) === params.categoryId)?.name,
           },
         },
         {
-          path: "/product/:id",
+          path: "/product/:productId",
           element: <ProductDetailPage />,
           handle: {
             scrollRestoration: 0, // when user selects another product in related products, scroll to the top of the page
             noFloatingCart: true,
+          },
+        },
+        {
+          path: "/category/:categoryId/brand/:brandId",
+          element: <CategoryDetailPage />,
+          handle: {
+            search: true,
+            title: ({ brands, params }) =>
+              brands.find((brand) => String(brand.id) === params.brandId)?.name, 
           },
         },
         {

@@ -9,6 +9,7 @@ import {
 import {
   Cart,
   Category,
+  Brand,
   Delivery,
   Location,
   Order,
@@ -106,6 +107,10 @@ export const categoriesState = atom(() =>
   requestWithFallback<Category[]>("/categories", [])
 );
 
+export const brandsState = atom(() =>
+  requestWithFallback<Brand[]>("/brands", [])
+);
+
 export const categoriesStateUpwrapped = unwrap(
   categoriesState,
   (prev) => prev ?? []
@@ -113,14 +118,15 @@ export const categoriesStateUpwrapped = unwrap(
 
 export const productsState = atom(async (get) => {
   const categories = await get(categoriesState);
+  const brands = await get(brandsState);
   const products = await requestWithFallback<
-    (Product & { categoryId: number })[]
+    (Product & { categoryId: number, brandId: number })[]
   >("/products", []);
   return products.map((product) => ({
     ...product,
     category: categories.find(
       (category) => category.id === product.categoryId
-    )!,
+    ),brand: brands.find((brand)=>brand.id === product.brandId)!,
   }));
 });
 

@@ -61,8 +61,8 @@ export function useAddToCart(product: Product) {
   const [cart, setCart] = useAtom(cartState);
 
   const currentCartItem = useMemo(
-    () => cart.find((item) => item.product.id === product.id),
-    [cart, product.id]
+    () => cart.find((item) => item.product.productId === product.productId),
+    [cart, product.productId]
   );
 
   const addToCart = (
@@ -125,7 +125,7 @@ export function useCheckout() {
         amount: totalAmount,
         desc: "Thanh toán đơn hàng",
         item: cart.map((item) => ({
-          id: item.product.id,
+          id: item.product.productId,
           name: item.product.name,
           price: item.product.price,
           quantity: item.quantity,

@@ -10,6 +10,7 @@ export interface UserInfo {
 export interface Product {
   id: number;
   name: string;
+  brand: Brand,
   price: number;
   originalPrice?: number;
   image: string;
@@ -17,6 +18,11 @@ export interface Product {
   detail?: string;
   sizes?: Size[];
   colors?: Color[];
+}
+
+export interface Brand {
+  id: number;
+  name: string;
 }
 
 export interface Category {
