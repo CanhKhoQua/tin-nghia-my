@@ -4,7 +4,6 @@ import { categoriesState } from "@/state";
 
 export default function CategoryListPage() {
   const categories = useAtomValue(categoriesState);
-
   return (
     <div className="grid grid-cols-4 p-4 gap-x-2 gap-y-8 bg-section">
       {categories.map((category) => (

@@ -21,15 +21,15 @@ export default function Header() {
   const [handle, match] = useRouteHandle();
   const userInfo = useAtomValue(loadableUserInfoState);
 
-  const title = useMemo(() => {
-    if (handle) {
-      if (typeof handle.title === "function") {
-        return handle.title({ categories, params: match.params });
-      } else {
-        return handle.title;
-      }
+const title = useMemo(() => {
+  if (handle) {
+    if (typeof handle.title === "function") {
+      return handle.title({ categories, params: match.params });
+    } else {
+      return handle.title;
     }
-  }, [handle, categories]);
+  }
+}, [handle, categories, match.params]);
 
   const showBack = location.key !== "default" && !handle?.noBack;
 

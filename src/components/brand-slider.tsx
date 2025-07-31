@@ -2,6 +2,7 @@ import { brandsState, productsByCategoryState } from "@/state";
 import { useAtomValue } from "jotai";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
+import TransitionLink from "./transition-link";
 
 export default function BrandSlider() {
   const { categoryId } = useParams();
@@ -18,28 +19,31 @@ export default function BrandSlider() {
 
   return (
     <div className="px-3 py-2 overflow-x-auto flex space-x-2">
-      <button
-        className={`h-8 flex-none rounded-full p-1 pr-2 flex items-center space-x-1 border border-black/15 ${
-          selectedBrandId === null
-            ? "bg-primary text-white border-primary"
-            : "bg-white text-gray-700 border-gray-300"
-        }`}
-        onClick={() => setSelectedBrandId(null)}
-      >
-        <p className="text-xs whitespace-nowrap">Tất cả thương hiệu</p>
-      </button>
-      {categoryBrands.map((brand) => (
+      <TransitionLink to={`/category/${categoryId}`}> 
         <button
-          key={brand.id}
           className={`h-8 flex-none rounded-full p-1 pr-2 flex items-center space-x-1 border border-black/15 ${
-            selectedBrandId === brand.id
+            selectedBrandId === null
               ? "bg-primary text-white border-primary"
               : "bg-white text-gray-700 border-gray-300"
           }`}
-          onClick={() => setSelectedBrandId(brand.id)}
+          onClick={() => setSelectedBrandId(null)}
         >
-          <p className="text-xs whitespace-nowrap">{brand.name}</p>
+          <p className="text-xs whitespace-nowrap">Tất cả thương hiệu</p>
         </button>
+      </TransitionLink>
+      {categoryBrands.map((brand) => (
+        <TransitionLink key={brand.id} to={`/category/${categoryId}/${brand.id}`}>
+          <button
+            className={`h-8 flex-none rounded-full p-1 pr-2 flex items-center space-x-1 border border-black/15 ${
+              selectedBrandId === brand.id
+                ? "bg-primary text-white border-primary"
+                : "bg-white text-gray-700 border-gray-300"
+            }`}
+            onClick={() => setSelectedBrandId(brand.id)}
+          >
+            <p className="text-xs whitespace-nowrap">{brand.name}</p>
+          </button>
+        </TransitionLink>
       ))}
     </div>
   );

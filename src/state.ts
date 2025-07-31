@@ -126,7 +126,7 @@ export const productsState = atom(async (get) => {
     ...product,
     category: categories.find(
       (category) => category.id === product.categoryId
-    ),brand: brands.find((brand)=>brand.id === product.brandId)!,
+    ), brand: brands.find((brand) => brand.id === product.brandId)!,
   }));
 });
 
@@ -175,6 +175,14 @@ export const productsByCategoryState = atomFamily((id: String) =>
   })
 );
 
+export const productsByBrandState = atomFamily((id: String) =>
+  atom(async (get) => {
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    const products = await get(productsState);
+    return products.filter((product) => String(product.brandId) === id);
+  })
+);
+
 export const stationsState = atom(async () => {
   let location: Location | undefined;
   try {
@@ -205,13 +213,13 @@ export const stationsState = atom(async () => {
     ...station,
     distance: location
       ? formatDistant(
-          calculateDistance(
-            location.lat,
-            location.lng,
-            station.location.lat,
-            station.location.lng
-          )
+        calculateDistance(
+          location.lat,
+          location.lng,
+          station.location.lat,
+          station.location.lng
         )
+      )
       : undefined,
   }));
 

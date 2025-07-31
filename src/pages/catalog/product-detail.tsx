@@ -10,8 +10,8 @@ import { Button } from "zmp-ui";
 import Section from "@/components/section";
 
 export default function ProductDetailPage() {
-  const { id } = useParams();
-  const product = useAtomValue(productState(Number(id)))!;
+  const { productId } = useParams();
+  const product = useAtomValue(productState(Number(productId)))!;
 
   const navigate = useNavigate();
   const { addToCart } = useAddToCart(product);
@@ -31,9 +31,9 @@ export default function ProductDetailPage() {
           />
           <div>
             <div className="text-xl font-bold text-primary">
-              {formatPrice(product.price)}
+{/*{formatPrice(product.price)}*/}
             </div>
-            {product.originalPrice && (
+          {/*  {product.originalPrice && (
               <div className="text-2xs space-x-0.5">
                 <span className="text-subtitle line-through">
                   {formatPrice(product.originalPrice)}
@@ -45,7 +45,7 @@ export default function ProductDetailPage() {
                   %
                 </span>
               </div>
-            )}
+            )}*/}
             <div className="text-sm mt-1">{product.name}</div>
           </div>
           <ShareButton product={product} />
@@ -54,8 +54,8 @@ export default function ProductDetailPage() {
           <>
             <div className="bg-background h-2 w-full"></div>
             <Section title="Mô tả sản phẩm">
-              <div className="text-sm whitespace-pre-wrap text-subtitle p-4 pt-2">
-                {product.detail}
+              <div className="text-sm whitespace-pre-wrap text-subtitle p-4 pt-2"   
+              dangerouslySetInnerHTML={{ __html: product.detail || "" }}>
               </div>
             </Section>
           </>

@@ -98,7 +98,7 @@ const router = createBrowserRouter(
           handle: {
             search: true,
             title: ({ categories, params }) =>
-              categories.find((c) => String(c.id) === params.categoryId)?.name,
+              categories.find((c) => String(c.id) === params.categoryId)?.name || "Danh mục",
           },
         },
         {
@@ -110,12 +110,12 @@ const router = createBrowserRouter(
           },
         },
         {
-          path: "/category/:categoryId/brand/:brandId",
+          path: "/category/:categoryId/:brandId",
           element: <CategoryDetailPage />,
           handle: {
             search: true,
-            title: ({ brands, params }) =>
-              brands.find((brand) => String(brand.id) === params.brandId)?.name, 
+            title: ({ categories, params }) =>
+              categories.find((c) => String(c.id) === params.categoryId)?.name || "Danh mục",
           },
         },
         {
