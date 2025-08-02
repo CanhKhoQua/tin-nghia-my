@@ -13,6 +13,8 @@ import ShippingAddressPage from "./pages/cart/shipping-address";
 import StationsPage from "./pages/cart/stations";
 import OrderDetailPage from "./pages/orders/detail";
 import ProfileEditorPage from "./pages/profile/editor";
+import NewsPage from "./pages/news";
+import InfoPage from "./pages/info";
 
 const router = createBrowserRouter(
   [
@@ -37,6 +39,13 @@ const router = createBrowserRouter(
           },
         },
         {
+          path: "/news",
+          element: <NewsPage/>,
+          handle: {
+            title: "Tin tức"
+          },
+        },
+        {
           path: "/orders/:status?",
           element: <OrdersPage />,
           handle: {
@@ -51,6 +60,13 @@ const router = createBrowserRouter(
           },
         },
         {
+          path: "/info",
+          element: <InfoPage/>,
+          handle: {
+            title: "Thông tin cá nhân"
+          },
+        },
+        /*{
           path: "/cart",
           element: <CartPage />,
           handle: {
@@ -58,7 +74,7 @@ const router = createBrowserRouter(
             noBack: true,
             noFloatingCart: true,
           },
-        },
+        },*/
         {
           path: "/shipping-address",
           element: <ShippingAddressPage />,

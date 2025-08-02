@@ -143,6 +143,63 @@ export function CartIcon(props: { active?: boolean; mono?: boolean }) {
   );
 }
 
+export function NewsIcon(props: { active?: boolean }) {
+  if (props.active) {
+    return (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          x="3"
+          y="5"
+          width="18"
+          height="14"
+          rx="2"
+          stroke="var(--primary)"
+          strokeWidth="2"
+          fill="none"
+        />
+        <path
+          d="M7 8h10M7 12h7M7 16h4"
+          stroke="var(--primary)"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        x="3"
+        y="5"
+        width="18"
+        height="14"
+        rx="2"
+        stroke="#6F7071"
+        strokeWidth="2"
+        fill="none"
+      />
+      <path
+        d="M7 8h10M7 12h7M7 16h4"
+        stroke="#6F7071"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 export function PackageIcon(props: { active?: boolean }) {
   if (props.active) {
     return (
@@ -443,6 +500,66 @@ export function SearchIconLarge() {
           <stop offset="1" stopColor="white" stopOpacity="0" />
         </linearGradient>
       </defs>
+    </svg>
+  );
+}
+
+
+export function SearchIcon(props: { active?: boolean }) {
+  if (props.active) {
+    return (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="7"
+          stroke="var(--primary)"
+          strokeWidth="2"
+          fill="none"
+        />
+        <line
+          x1="16.5"
+          y1="16.5"
+          x2="21"
+          y2="21"
+          stroke="var(--primary)"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        cx="11"
+        cy="11"
+        r="7"
+        stroke="#6F7071"
+        strokeWidth="2"
+        fill="none"
+      />
+      <line
+        x1="16.5"
+        y1="16.5"
+        x2="21"
+        y2="21"
+        stroke="#6F7071"
+        strokeWidth="2"
+        strokeLinecap="round"
+      />
     </svg>
   );
 }

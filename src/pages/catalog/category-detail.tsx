@@ -11,7 +11,6 @@ import BrandSlider from "@/components/brand-slider";
 
 function ProductList() {
   const { categoryId, brandId } = useParams();
-  console.log(categoryId)
 
   const products = useAtomValue(
     brandId

@@ -1,4 +1,4 @@
-import { CartIcon, CategoryIcon, HomeIcon, PackageIcon } from "./vectors";
+import { CartIcon, CategoryIcon, HomeIcon, NewsIcon, PackageIcon, SearchIcon } from "./vectors";
 import HorizontalDivider from "./horizontal-divider";
 import { useAtomValue } from "jotai";
 import { cartState } from "@/state";
@@ -17,7 +17,17 @@ const NAV_ITEMS = [
     path: "/categories",
     icon: CategoryIcon,
   },
-  {
+    {
+    name: "Tin tức",
+    path: "/news",
+    icon: NewsIcon,
+  },
+    {
+    name: "Tra cứu thông tin",
+    path: "/info",
+    icon: SearchIcon,
+  }
+  /*{
     name: "Đơn hàng",
     path: "/orders",
     icon: PackageIcon,
@@ -34,7 +44,7 @@ const NAV_ITEMS = [
         </Badge>
       );
     },
-  },
+  },*/
 ];
 
 export default function Footer() {
