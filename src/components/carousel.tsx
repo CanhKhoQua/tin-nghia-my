@@ -63,8 +63,8 @@ export default function Carousel(props: CarouselProps) {
     useDotButton(emblaApi);
 
   return (
-    <div className="overflow-hidden" ref={emblaRef}>
-      <div className="flex space-x-2 mt-2 mx-4">
+    <div className="overflow-visible" ref={emblaRef}>
+      <div className="flex space-x-2 mt-2 mx-2">
         {props.slides.map((slide, i) => (
           <div key={i} className="flex-none basis-full">
             {slide}

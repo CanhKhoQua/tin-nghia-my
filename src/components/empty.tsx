@@ -11,12 +11,12 @@ export function EmptySearchResult() {
   );
 }
 
-export function EmptyCategory() {
+export function EmptyPage() {
   return (
     <div className="h-full flex-1 p-6 space-y-4 flex flex-col items-center justify-center">
       <EmptyBoxIcon />
       <div className="text-inactive text-center text-2xs">
-        Không có sản phẩm trong danh mục này
+        Trang này không tồn tại
       </div>
     </div>
   );

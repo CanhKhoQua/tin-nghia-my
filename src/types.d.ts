@@ -31,6 +31,15 @@ export interface Category {
   image: string;
 }
 
+export interface Article {
+  id: number;
+  title: string;
+  description: string;
+  timeAgo: string;
+  image: string;
+  content: string;
+}
+
 export interface CartItem {
   product: Product;
   quantity: number;

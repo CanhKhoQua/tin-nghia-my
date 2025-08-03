@@ -18,6 +18,7 @@ import {
   ShippingAddress,
   Station,
   UserInfo,
+  Article,
 } from "@/types";
 import { requestWithFallback } from "@/utils/request";
 import {
@@ -30,8 +31,11 @@ import toast from "react-hot-toast";
 import { calculateDistance } from "./utils/location";
 import { formatDistant } from "./utils/format";
 import CONFIG from "./config";
+import { mockArticles } from "./mock/articles";
 
 export const userInfoKeyState = atom(0);
+
+export const articlesState = atom<Promise<Article[]>>(mockArticles);
 
 export const userInfoState = atom<Promise<UserInfo>>(async (get) => {
   get(userInfoKeyState);
@@ -129,6 +133,13 @@ export const productsState = atom(async (get) => {
     ), brand: brands.find((brand) => brand.id === product.brandId)!,
   }));
 });
+
+export const newsByIdState = atomFamily((id: number) =>
+  atom(async (get) => {
+    const articles = await get(articlesState);
+    return articles.find((news) => news.id === id);
+  })
+);
 
 export const flashSaleProductsState = atom((get) => get(productsState));
 

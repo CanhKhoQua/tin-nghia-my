@@ -14,5 +14,10 @@ export default () => {
         "@": path.resolve(__dirname, "./src"),
       },
     },
+    server: {
+      port: 8000,
+      host: true,
+      strictPort: true,
+    }
   });
 };

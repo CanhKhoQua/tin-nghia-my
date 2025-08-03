@@ -5,7 +5,7 @@ import { productsByBrandState, productsByCategoryState } from "@/state";
 import CategorySlider from "@/components/category-slider";
 import { Suspense } from "react";
 import { ProductGridSkeleton } from "../search";
-import { EmptyCategory } from "@/components/empty";
+import { EmptyPage } from "@/components/empty";
 import { useParams } from "react-router-dom";
 import BrandSlider from "@/components/brand-slider";
 
@@ -18,7 +18,7 @@ function ProductList() {
       : productsByCategoryState(String(categoryId))
   );
   if (!products.length) {
-    return <EmptyCategory />;
+    return <EmptyPage />;
   }
 
   return <ProductGrid products={products} className="pt-4" />;

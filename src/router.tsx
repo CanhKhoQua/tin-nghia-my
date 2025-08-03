@@ -15,6 +15,7 @@ import OrderDetailPage from "./pages/orders/detail";
 import ProfileEditorPage from "./pages/profile/editor";
 import NewsPage from "./pages/news";
 import InfoPage from "./pages/info";
+import ArticlePage from "./pages/news/news-items";
 
 const router = createBrowserRouter(
   [
@@ -38,11 +39,51 @@ const router = createBrowserRouter(
             noBack: true,
           },
         },
+                {
+          path: "/category/:categoryId",
+          element: <CategoryDetailPage />,
+          handle: {
+            search: true,
+            title: ({ categories, params }) =>
+              categories.find((c) => String(c.id) === params.categoryId)?.name || "Danh mục",
+          },
+        },
+        {
+          path: "/product/:productId",
+          element: <ProductDetailPage />,
+          handle: {
+            scrollRestoration: 0, // when user selects another product in related products, scroll to the top of the page
+            noFloatingCart: true,
+          },
+        },
+        {
+          path: "/category/:categoryId/:brandId",
+          element: <CategoryDetailPage />,
+          handle: {
+            search: true,
+            title: ({ categories, params }) =>
+              categories.find((c) => String(c.id) === params.categoryId)?.name || "Danh mục",
+          },
+        },
         {
           path: "/news",
           element: <NewsPage/>,
           handle: {
             title: "Tin tức"
+          },
+        },
+        {
+          path: "/news/:newsId",
+          element: <ArticlePage/>,
+          handle: {
+            title: "Tin tức"
+          },
+        },
+        {
+          path: "/info",
+          element: <InfoPage/>,
+          handle: {
+            title: "Thông tin cá nhân"
           },
         },
         {
@@ -57,13 +98,6 @@ const router = createBrowserRouter(
           element: <OrderDetailPage />,
           handle: {
             title: "Thông tin đơn hàng",
-          },
-        },
-        {
-          path: "/info",
-          element: <InfoPage/>,
-          handle: {
-            title: "Thông tin cá nhân"
           },
         },
         /*{
@@ -106,32 +140,6 @@ const router = createBrowserRouter(
             title: "Thông tin tài khoản",
             noFooter: true,
             noFloatingCart: true,
-          },
-        },
-        {
-          path: "/category/:categoryId",
-          element: <CategoryDetailPage />,
-          handle: {
-            search: true,
-            title: ({ categories, params }) =>
-              categories.find((c) => String(c.id) === params.categoryId)?.name || "Danh mục",
-          },
-        },
-        {
-          path: "/product/:productId",
-          element: <ProductDetailPage />,
-          handle: {
-            scrollRestoration: 0, // when user selects another product in related products, scroll to the top of the page
-            noFloatingCart: true,
-          },
-        },
-        {
-          path: "/category/:categoryId/:brandId",
-          element: <CategoryDetailPage />,
-          handle: {
-            search: true,
-            title: ({ categories, params }) =>
-              categories.find((c) => String(c.id) === params.categoryId)?.name || "Danh mục",
           },
         },
         {
