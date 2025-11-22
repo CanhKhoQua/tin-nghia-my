@@ -1,4 +1,4 @@
-# ZaUI Market
+# Cloned ZaUI Market
 
 <p style="display: flex; flex-wrap: wrap; gap: 4px">
   <img alt="vite" src="https://img.shields.io/github/package-json/dependency-version/Zalo-MiniApp/zaui-market/dev/vite" />
@@ -8,12 +8,6 @@
   <img alt="jotai" src="https://img.shields.io/github/package-json/dependency-version/Zalo-MiniApp/zaui-market/jotai" />
   <img alt="tailwindcss" src="https://img.shields.io/github/package-json/dependency-version/Zalo-MiniApp/zaui-market/dev/tailwindcss" />
 </p>
-
-A template for vendors to sale their products on the online market. It provides full features such as product viewing, shopping cart, payment, order management, profile management, etc.
-
-|                      Demo                       |                  Entrypoint                  |
-| :---------------------------------------------: | :------------------------------------------: |
-| <img src="./docs/preview.webp" alt="Home page"> | <img src="./docs/qr.webp" alt="Entry point"> |
 
 ## Setup
 
