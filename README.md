@@ -1,4 +1,4 @@
-# ZaUI Market
+# Cloned ZaUI Market
 
 <p style="display: flex; flex-wrap: wrap; gap: 4px">
   <img alt="vite" src="https://img.shields.io/github/package-json/dependency-version/Zalo-MiniApp/zaui-market/dev/vite" />
